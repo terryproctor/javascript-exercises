@@ -1,25 +1,32 @@
-function add () {
-	
-}
+add = (a,b) => a + b;
 
-function subtract () {
-	
-}
+subtract = (a,b) => a - b;
 
-function sum () {
-	
-}
+sum = (a) => {
+let total = 0;
+a.forEach(value => {total += value;});
+return total;
+};
 
-function multiply () {
-	
-}
+multiply = (a) => {
+if (a.length) {
+let total = 1;
+a.forEach(value => {total *= value;});
+return total;
+};
+};
 
-function power() {
-	
-}
+power = (a,b) => a**b; 
 
-function factorial() {
-	
+function factorial(a) {
+	if (a === 0) {return 1;};
+	let factorialArray = [];
+	if (a > 0) {
+		for (let i = 1; i <= a; i++) {
+			factorialArray.push(i);
+		}
+		return total = multiply(factorialArray);
+	}	
 }
 
 module.exports = {
