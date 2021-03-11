@@ -23,7 +23,7 @@ caesar = (string, shift) => {
         //change each to 1-26 values for a-z
         let value = ((ascii[i] - x) % 27);
         //add shift and shift back to ascii values 
-        value = ((value + shift) % 26) + y;        
+        value = ((value + shift) % 27) + y;        
         //put values in alpha
         alpha.push(value);
 
