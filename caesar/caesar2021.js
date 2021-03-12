@@ -22,6 +22,7 @@ caesar = (string, shift) => {
         }
         let value = ((ascii[i] - x) % 26); 
         value = (value + shift) 
+        //fixed bugs involving values minus shifts giving neg. values
         while (value < 1) {
           value = 26 + value;
         }
