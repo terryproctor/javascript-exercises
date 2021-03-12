@@ -16,24 +16,24 @@ caesar = (string, shift) => {
     ((ascii[i] >= 97) && (ascii[i] <= 122))) {
         //set x and y variables to covert ascii to alpha and to new string
         if ((ascii[i] >= 65) && (ascii[i] <= 90)) {
-            x = 10; y = 64;
+            x = 13; y = 65;
         } else if ((ascii[i] >= 97) && (ascii[i] <= 122)) {
-            x =15; y = 96;
+            x =19; y = 97;
         }
-        //change each to 1-26 values for a-z
-        let value = ((ascii[i] - x) % 27);
-        //add shift and shift back to ascii values 
-        value = ((value + shift) % 27) + y;        
-        //put values in alpha
+        let value = ((ascii[i] - x) % 26); 
+        value = (value + shift) 
+        while (value < 1) {
+          value = 26 + value;
+        }
+        value = (value % 26) + y;
+        
         alpha.push(value);
 
 
     } else {
-        //none alphabetical values do not change and modify
         alpha.push(ascii[i]);
     };
     }
-    //change values back to string values
     alpha.forEach(element => { 
         newString += String.fromCharCode(element);     
     });
