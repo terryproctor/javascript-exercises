@@ -1,6 +1,6 @@
 palindromes = (string) => {
     //remove spaces and special chars
-    let pattern = /\W/ig;
+    let pattern = /[\W_]ig;
     let removedString = string.toLowerCase().replace(pattern, '');
     
     //reverse removedstring
