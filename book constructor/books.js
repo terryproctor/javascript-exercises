@@ -20,9 +20,13 @@ function addBookToLibrary(title, author, pages, read) {
 
 addBookToLibrary('Charlie and the Chocolate Factory', 'Roal Dahl', 452, true);
 addBookToLibrary('1984', 'Orsen Wells', 655, true);
-//console.log(myLibrary[0].info());
 
+// need to add function where book is displayed in DOM as a div
 myLibrary.forEach(function (item){
-    //console.log(item.info())
+    let bookBox = document.createElement('div');
+    bookBox.textContent = item.info();
+    bookBox.class = 'book';
+    let bookContainer = document.getElementsByClassName('bookContainer')[0];
+    bookContainer.appendChild(bookBox);
 }
 )
