@@ -4,9 +4,34 @@
 <style type="text/css"></style>
 <link rel="stylesheet" type="text" href="style.css">
 </head>
+
 <body>
-<div class="bookContainer">
-    
-</div>
+    <!-- book library -->
+    <h1>My Library</h1>
+    <div class="bookContainer">
+    </div>
+
+    <!-- buttons -->
+    <button id="newBook">NEW BOOK</button>
+
+    <!-- new book form -->
+    <div id="bookFormContainer">
+        <fieldset>
+        <legend>Add Book</legend>
+        
+        <p>Title: <input type="text" name="newBook" size="100" maxlength="100">
+        </p>
+        <p>Author: <input type="text" name="author" size="50" maxlength="50">
+        </p>
+        <p>Pages: <input type="number" name="pages">
+        </p>
+        <p>Read: </br>Yes<input type="radio" name="read">
+        Not read<input type="radio" name="notRead">
+        </p>
+        <input type="submit" name="submitBook" value="Submit"/>
+        
+        </fieldset>    
+    </div>
+
 </body>
 <script src="books.js"></script>

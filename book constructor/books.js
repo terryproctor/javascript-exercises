@@ -20,6 +20,7 @@ function addBookToLibrary(title, author, pages, read) {
 
 addBookToLibrary('Charlie and the Chocolate Factory', 'Roal Dahl', 452, true);
 addBookToLibrary('1984', 'Orsen Wells', 655, true);
+addBookToLibrary('50 Shades of Gray', 'Who Cares', 12, false)
 
 // need to add function where book is displayed in DOM as a div
 myLibrary.forEach(function (item){
