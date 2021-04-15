@@ -23,18 +23,24 @@ addBookToLibrary('Charlie and the Chocolate Factory', 'Roal Dahl', 452, true);
 addBookToLibrary('1984', 'Orsen Wells', 655, true);
 addBookToLibrary('50 Shades of Gray', 'Who Cares', 12, false)
 
+let bookContainer = document.getElementsByClassName('bookContainer')[0];
+
 // need to add function where book is displayed in DOM as a div
 function displayBooks(item){
+    // book box is divs for each box
     let bookBox = document.createElement('div');
-    //bookBox.textContent = item.info();
-    let bookContainer = document.getElementsByClassName('bookContainer')[0];
+    // book containers containers all book
+
     bookContainer.appendChild(bookBox);
     
+    // book is just info for that book
     let book = document.createElement('div');
     book.textContent = item.info();
+    book.dataset.value = myLibrary.indexOf(item);
     let delBtn = document.createElement('button');
-     
+    delBtn.dataset.value = book.dataset.value; 
     delBtn.textContent = 'Delete';
+    delBtn.class = 'delete'
     bookBox.appendChild(book);
     book.appendChild(delBtn);
 }
@@ -59,3 +65,15 @@ form.addEventListener('submit', function(e){
     displayBooks(addBookToLibrary(title, author, pages, read));
     form.reset();
 })
+
+
+// need to develop function for delete button
+bookContainer.addEventListener('click', function(e){
+    e.preventDefault();
+    let target = e.target;
+    if (target.class === 'delete') {
+        //console.log(target.dataset.value)
+        myLibrary.splice(target.dataset.value, 1);
+        bookContainer.childNodes[target.dataset.value].remove()
+    }
+});
