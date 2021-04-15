@@ -17,19 +17,23 @@
     <!-- new book form -->
     <div id="bookFormContainer">
         <fieldset>
-        <legend>Add Book</legend>
+        <legend><b>Add Book</b></legend>
         
-        <p>Title: <input type="text" name="newBook" size="100" maxlength="100">
+        <form id="form">
+        <p>Title: <input type="text" name="title" size="100" maxlength="100">
         </p>
         <p>Author: <input type="text" name="author" size="50" maxlength="50">
         </p>
         <p>Pages: <input type="number" name="pages">
         </p>
-        <p>Read: </br>Yes<input type="radio" name="read">
-        Not read<input type="radio" name="notRead">
+        <p>Read:</p> 
+        <input type="radio" id="read" name="read"><label for="Yes">Yes</label>
+        <input type="radio" id="notRead" name="read"><label for="No">No</label>
         </p>
-        <input type="submit" name="submitBook" value="Submit"/>
-        
+        <input type="submit" name="submitBook" value="Submit" id="submitBook"/>
+        <p id="formErrors"></p>
+        </form>
+
         </fieldset>    
     </div>
 
