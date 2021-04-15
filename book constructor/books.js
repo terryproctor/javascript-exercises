@@ -32,7 +32,7 @@ function displayBooks(item){
     bookContainer.appendChild(bookBox);
 }
 // display all books initially
-myLibrary.forEach(displayBooks)
+myLibrary.forEach(displayBooks);
 
 let form = document.querySelector("form");
 let inputs = form.elements;
@@ -45,7 +45,12 @@ form.addEventListener('submit', function(e){
     const pages = form.querySelector('input[name="pages"]').value;
     const read = form.querySelector('input[name="read"]').value;
     ;
+    if (!(title && author && pages && read)) {
+        alert('All fields need to be filled in!');
+        return;
+    }
     displayBooks(addBookToLibrary(title, author, pages, read));
     form.reset();
 })
 
+form.classList.add('book');
