@@ -31,9 +31,9 @@ function displayBooks(item){
     bookContainer.appendChild(bookBox);
     
     let book = document.createElement('div');
-    book.textContent = item.info()
+    book.textContent = item.info();
     let delBtn = document.createElement('button');
-    //delBtn.name = 
+     
     delBtn.textContent = 'Delete';
     bookBox.appendChild(book);
     book.appendChild(delBtn);
