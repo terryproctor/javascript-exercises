@@ -26,10 +26,17 @@ addBookToLibrary('50 Shades of Gray', 'Who Cares', 12, false)
 // need to add function where book is displayed in DOM as a div
 function displayBooks(item){
     let bookBox = document.createElement('div');
-    bookBox.textContent = item.info();
-    bookBox.class = 'book';
+    //bookBox.textContent = item.info();
     let bookContainer = document.getElementsByClassName('bookContainer')[0];
     bookContainer.appendChild(bookBox);
+    
+    let book = document.createElement('div');
+    book.textContent = item.info()
+    let delBtn = document.createElement('button');
+    //delBtn.name = 
+    delBtn.textContent = 'Delete';
+    bookBox.appendChild(book);
+    book.appendChild(delBtn);
 }
 // display all books initially
 myLibrary.forEach(displayBooks);
@@ -52,5 +59,3 @@ form.addEventListener('submit', function(e){
     displayBooks(addBookToLibrary(title, author, pages, read));
     form.reset();
 })
-
-form.classList.add('book');
